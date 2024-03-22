@@ -1,0 +1,14 @@
+[Unit]
+Description=website
+After=network.target
+
+[Service]
+ExecStart=sudo npm --urls "http://*:30"
+WorkingDirectory=/var/www
+User=ubuntu
+Restart=on-failure
+RestartSec=5
+StartLimitInterval=0
+
+[Install]
+WantedBy=multi-user.target
